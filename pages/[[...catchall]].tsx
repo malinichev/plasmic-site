@@ -17,10 +17,13 @@ export default function PlasmicLoaderPage(props: {
 }) {
   const { plasmicData, queryCache } = props;
   const router = useRouter();
+
   if (!plasmicData || plasmicData.entryCompMetas.length === 0) {
     return <Error statusCode={404} />;
   }
+
   const pageMeta = plasmicData.entryCompMetas[0];
+
   return (
     <PlasmicRootProvider
       loader={PLASMIC}
